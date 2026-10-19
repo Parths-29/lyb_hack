@@ -92,22 +92,24 @@ export default function Home() {
   return (
     <div className="app">
       <header className="nav" data-solid={solidNav ? "" : undefined}>
-        <a className="brand" href="#top">
-          Plant X
-          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-            <path
-              d="M4 12 L12 4 M12 4 H7 M12 4 V9"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-            />
-          </svg>
-        </a>
-        <p className="nav-center">Energy Advisor</p>
-        <p className="nav-end">
-          <span className="pill">Illustrative</span>
-        </p>
+        <div className="rail nav-bar">
+          <a className="brand" href="#top">
+            Plant X
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                d="M4 12 L12 4 M12 4 H7 M12 4 V9"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+              />
+            </svg>
+          </a>
+          <p className="nav-center">Energy Advisor</p>
+          <p className="nav-end">
+            <span className="pill">Illustrative</span>
+          </p>
+        </div>
       </header>
 
       <section className="hero" id="top">

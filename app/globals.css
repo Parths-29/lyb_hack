@@ -10,6 +10,8 @@
   --accent-ink: #0c0e13;
   --line: color-mix(in srgb, var(--ink) 12%, transparent);
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --gutter: 20px;
+  --rail: 1120px;
   --sans: var(--font-sans), Inter, "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
   color-scheme: light;
 }
@@ -60,13 +62,8 @@ p {
   position: sticky;
   top: 0;
   z-index: 40;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
   height: 64px;
   margin-bottom: -64px;
-  padding: 0 max(clamp(16px, 4.6vw, 56px), env(safe-area-inset-right)) 0
-    max(clamp(16px, 4.6vw, 56px), env(safe-area-inset-left));
   color: #fff;
   transition: background-color 0.35s, color 0.35s, box-shadow 0.35s;
 }
@@ -98,6 +95,23 @@ p {
   .brand:hover svg {
     transform: translate(2px, -2px);
   }
+}
+
+.rail,
+.wrap,
+.hero-copy {
+  box-sizing: border-box;
+  width: min(100%, calc(var(--rail) + 2 * var(--gutter)));
+  margin-inline: auto;
+  padding-inline: max(var(--gutter), env(safe-area-inset-left))
+    max(var(--gutter), env(safe-area-inset-right));
+}
+
+.nav-bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 100%;
 }
 
 .nav-center {
@@ -134,8 +148,7 @@ p {
   justify-content: flex-start;
   overflow: hidden;
   color: #fff;
-  padding: 96px max(clamp(20px, 4.6vw, 56px), env(safe-area-inset-right)) 88px
-    max(clamp(20px, 4.6vw, 56px), env(safe-area-inset-left));
+  padding: 96px 0 88px;
 }
 
 .hero-bg {
@@ -161,7 +174,6 @@ p {
 .hero-copy {
   position: relative;
   z-index: 2;
-  width: min(1120px, 100%);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 460px);
   gap: 36px;
@@ -214,14 +226,6 @@ p {
   box-shadow: inset 0 0 0 1px color-mix(in srgb, #fff 28%, transparent);
   font-size: 13px;
   font-weight: 500;
-}
-
-.wrap {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 max(clamp(20px, 4.6vw, 56px), env(safe-area-inset-right)) 0
-    max(clamp(20px, 4.6vw, 56px), env(safe-area-inset-left));
 }
 
 .section,
@@ -665,8 +669,8 @@ textarea {
 }
 
 .chart {
-  margin-top: 22px;
-  padding: 16px 8px 8px;
+  margin: 22px 0 0;
+  padding: 16px;
   border-radius: 12px;
   background: var(--tint);
 }
@@ -725,7 +729,7 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 18px;
-  margin: 8px 12px 0;
+  margin: 8px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -758,8 +762,8 @@ textarea {
 
 .day-facts,
 .chart figcaption p {
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .chart figcaption p {
@@ -833,7 +837,7 @@ textarea {
 }
 
 .colophon {
-  padding: 28px 0 64px;
+  padding-block: 28px 64px;
 }
 
 .colophon-figures {
@@ -898,7 +902,7 @@ textarea {
 }
 
 @media (max-width: 980px) {
-  .nav {
+  .nav-bar {
     grid-template-columns: 1fr auto;
   }
 
