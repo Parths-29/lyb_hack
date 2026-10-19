@@ -2,17 +2,19 @@
 
 Three architectural implementations of the DesiCane irrigation advisory system.
 
-## Plant X Energy Advisor prototype
+## Plant X Energy Advisor
 
-The root URL opens the illustrative, client-only Plant X Energy Advisor demo. It includes synthetic recommendations, explainable decisions, safety guardrails, a normalized energy chart, and sensitivity controls.
+The live site is the Next.js app at the repository root. It is advisory only, uses synthetic data, and does not call the architecture backends.
 
-### Deploy to Vercel
+```bash
+npm install
+npm run dev
+npm run check
+```
 
-1. Import this GitHub repository into Vercel and keep the project root set to the repository root.
-2. Vercel reads the root `vercel.json`, installs the frontend dependencies, builds the Vite app, and serves `frontend/dist`.
-3. Deploy. No environment variables or backend services are needed for this prototype.
+Open http://localhost:3000. Refresh clears decisions. Vercel builds this Next.js app from the repository root. No environment variables are required.
 
-For a local preview: `cd frontend`, `npm install`, then `npm run dev`.
+The Vite app in `frontend/` remains for the DesiCane architecture demos.
 
 ## Running
 
