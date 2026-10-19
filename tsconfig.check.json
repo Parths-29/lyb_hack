@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2022",
+    "strict": true,
+    "outDir": ".check-out",
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "files": ["lib/calc.check.ts"]
+}
